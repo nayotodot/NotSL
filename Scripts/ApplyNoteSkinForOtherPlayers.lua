@@ -18,12 +18,13 @@
 -- NextScreen3=lua,ApplyNoteSkinForOtherPlayers;screen,ScreenStage
 -- NextScreen4=lua,ApplyNoteSkinForOtherPlayers;screen,ScreenStage
 -- ```
+local mod = math.mod or math.fmod;
 
 function ApplyNoteSkinForOtherPlayers()
 	if GameState.GetCurrentNoteSkins and GameState.ApplyModifiers then
 		local NoteSkins = GAMESTATE:GetCurrentNoteSkins();
 		for pn = 3,8 do
-			local index = (pn-1) % 2 + 1;
+			local index = mod( (pn-1), 2 ) + 1;
 			GAMESTATE:ApplyModifiers( NoteSkins[index], pn );
 		end
 	end

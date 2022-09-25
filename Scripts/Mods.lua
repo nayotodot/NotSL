@@ -189,13 +189,10 @@ function ScreenEdit() EditMode = true; end
 ---------------------------------------
 -- Judgment/Gameplay/GhostData Functions
 ---------------------------------------
-
 function JudgmentInit()
-	
 	if FakeCombo == nil or not FakeCombo then
 		FakeCombo = {0,0}
 	end
-	
 	judge = {}
 	ghost = {}
 	for pn = 1,2 do
@@ -246,7 +243,7 @@ function JudgmentInit()
 					-- if selected, use every method possible to hide the judgment sprite in case a file loads an alternate judgment font
 					-- maybe a bit overkill 
 					for _, actor in ipairs{px, pxc} do
-						for i = 1, #invisibleSettings, 2 do
+						for i = 1, table.getn(invisibleSettings), 2 do
 							method = invisibleSettings[i]
 							value = invisibleSettings[i + 1]
 							if px[method] then
@@ -261,7 +258,7 @@ function JudgmentInit()
 							end
 							if actor.SetUpdateFunction then
 								actor:SetUpdateFunction(function()
-									for i = 1, #invisibleSettings, 2 do
+									for i = 1, table.getn(invisibleSettings), 2 do
 										method = invisibleSettings[i]
 										value = invisibleSettings[i + 1]
 										if px[method] then
