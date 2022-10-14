@@ -25,7 +25,9 @@ function ApplyNoteSkinForOtherPlayers()
 		local NoteSkins = GAMESTATE:GetCurrentNoteSkins();
 		for pn = 3,8 do
 			local index = mod( (pn-1), 2 ) + 1;
-			GAMESTATE:ApplyModifiers( NoteSkins[index], pn );
+			if NoteSkins[index] then
+				GAMESTATE:ApplyModifiers( NoteSkins[index], pn );
+			end
 		end
 	end
 end
