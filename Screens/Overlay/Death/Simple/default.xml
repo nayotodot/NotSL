@@ -16,13 +16,13 @@
 
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_CENTER_Y,SCREEN_BOTTOM;faderight,0.75;diffuse,1,0,0,0"
+		InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_CENTER_X,SCREEN_BOTTOM;faderight,0.75;diffuse,1,0,0,0"
 		FailedP1Command="stoptweening;diffusealpha,0.5;accelerate,0.6;diffusealpha,0"
 	/>
 
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_Y,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;fadeleft,0.75;diffuse,1,0,0,0"
+		InitCommand="stretchto,SCREEN_CENTER_X,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;fadeleft,0.75;diffuse,1,0,0,0"
 		FailedP2Command="stoptweening;diffusealpha,0.5;accelerate,0.6;diffusealpha,0"
 	/>
 
